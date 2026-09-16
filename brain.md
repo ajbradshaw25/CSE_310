@@ -22,3 +22,8 @@ brain/
     - You are to ask 5 questions and only 5. These questions must cover every aspect to determine if the user knows the topic and subtopic or not.
     - Once answered, give feedback to the user. (This could be links to articles with more info, other prompts the user can use AI to learn more, or just the answer).
     - Once passed the test (or not), store the results inside the <content-name>.md. Make sure you replace the <content-name> with the actual content name.
+# Constraints
+
+ - Don't make information up
+ - Don't mess up
+ - Make sure the folder structure is created and update it after every single answer.
