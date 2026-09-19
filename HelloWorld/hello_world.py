@@ -1,6 +1,9 @@
 print("/n Welcome to the Adventure Program!")
 print("/n This is your adventure! Once prompted enter your name to begin your story!")
 
+name = input("Enter your name: /n")
+print("Welcome", name)
+
 first = input("You wake up and you've realized that you are in the middle of the forest. It is chilly outside and you haven't eaten for days. Do you want to find shelter or scavenge for food?")
 if first == "shelter":
     print("You walk through the forest which filled with thousands of trees, and all sorts of animals and critters.")
