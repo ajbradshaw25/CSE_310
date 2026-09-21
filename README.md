@@ -2,10 +2,10 @@
 # Study Group Matcher
 
 ## Team Members
-Ashley Bradshaw
-Emily Titus
-Honami Gonda
-Mark Whitman 
+- Ashley Bradshaw
+- Emily Titus
+- Honami Gonda
+- Mark Whitman 
 
 ## Software Description
 A site that builds a user profile and then creates study groups based on department, course, and time available. 
