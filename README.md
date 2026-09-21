@@ -1,9 +1,14 @@
 # CSE_310
-# Project Title
+# Study Group Matcher
 
 ## Team Members
+Ashley Bradshaw
+Emily Titus
+Honami Gonda
+Mark Whitman 
 
 ## Software Description
+A site that builds a user profile and then creates study groups based on department, course, and time available. 
 
 ## Architecture
 
@@ -19,11 +24,11 @@
 
 |Responsibility                      |Team Member(s)              |
 |------------------------------------|----------------------------|
-|Conducting Meetings                 |                            |
-|Maintaining Team Assignment List    |                            |
-|Ensuring GitHub is Working          |                            |
-|Maintaining Documentation           |                            |
-|Create & Display Presentations      |                            |
-|Submit Team Assignments             |                            |
+|Conducting Meetings                 |      Honami                      |
+|Maintaining Team Assignment List    |       Honami                     |
+|Ensuring GitHub is Working          |           Ashley                 |
+|Maintaining Documentation           |               Emily             |
+|Create & Display Presentations      |               Mark and Emily           |
+|Submit Team Assignments             |                Mark            |
 
 ## Reflections
