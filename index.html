@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/1863928073.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Find a group | Study Group Matcher</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700;900&family=Noto+Sans:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="layout">
+      <!-- Side Bar -->
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-name">Study Group Matcher</div>
+          <div class="brand-sub">CAMPUS COMMUNITY</div>
+        </div>
+
+        <nav class="nav">
+          <a class="nav-item" href="#">Home</a>
+          <a class="nav-item is-active" href="#">Find a Group</a>
+          <a class="nav-item" href="#">Messages</a>
+          <a class="nav-item" href="#">Schedule</a>
+          <a class="nav-item" href="#">My Groups</a>
+        </nav>
+      </aside>
+
+      <!-- Main Area -->
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <div class="topbar-school">BYU-Idaho</div>
+            <h1 class="topbar-title">Find a Group</h1>
+          </div>
+          <div class="topbar-actions">
+            <button class="bell-button">
+              <i class="fa-regular fa-bell"></i>
+            </button>
+            <a class="btn-primary" href="#">+ Create a Group</a>
+          </div>
+        </header>
+
+        <section class="hero">
+          <div class="hero-eyebrow">Find your study buddy</div>
+          <h2 class="hero-title">
+            Studying is easier<br />when we do it together.
+          </h2>
+          <p class="hero-lead">
+            Find study partners who match your classes, major, and schedule.
+          </p>
+        </section>
+
+        <div class="search-row">
+          <label class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="search"
+              id="search-input"
+              placeholder="Search by class, course code, or keyword"
+            />
+          </label>
+          <div class="filters">
+            <button class="filter is-active">All</button>
+            <button class="filter">Major</button>
+            <button class="filter">Availability</button>
+            <button class="filter">Class</button>
+          </div>
+        </div>
+
+        <section class="recommended">
+          <h2 class="section-title">Recommended Groups</h2>
+          <p class="section-sub">
+            Curated based on your profile and availability
+          </p>
+          <div class="group-list" id="group-list"></div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

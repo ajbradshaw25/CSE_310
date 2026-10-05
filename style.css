@@ -1,0 +1,81 @@
+:root {
+    --bg: #f7f6f1;       /* page background */
+    --ink: #20201e;       /* text color */
+    --white: #ffffff;
+    --line: #deddd6;  
+    --muted: #77756f; 
+    --purple: #5b5bd6;  
+    --font-sans: "Noto Sans", sans-serif;
+    --font-display: "DM Sans", "Noto Sans", sans-serif;
+}
+
+/* === Whole page === */
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+}
+
+/* === Arrange side by side === */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 256px;
+    padding: 28px 20px;
+    border-right: 1px solid var(--line);
+}
+
+.main {
+    flex: 1;
+}
+
+/* === Sidebar: Logo Section === */
+.brand {
+    margin-bottom: 40px;
+    padding: 0 8px;
+}
+.brand-name {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.brand-sub {
+    margin-top: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+}
+
+/* ===　Sidebar: Menu === */
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #66645f;
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    background: var(--white);
+}
+
+.nav-item:is-active {
+    background: var(--ink);
+    color: var(--white);
+}
