@@ -24,9 +24,16 @@ To develop this software, we will be using the python programming language. We w
 
 ## Software Features
 
-* [ ] First feature here
-* [ ] Second feature here
-* [ ] Keep going ....
+* [ ] User accounts and / or profiles
+* [ ] Ability to create and join groups
+* [ ] Schedule
+* [ ] Notifications
+* [ ] A "my groups" page to see what groups you're a part of
+* [ ] database design and validation
+* [ ] Availability data on the groups
+* [ ] contact and messages to interact with other people in the groups you're a part of
+* [ ] contact requests
+* [ ] Search bar and search filters to find tailored groups to what you're looking for
 
 ## Team Communication
  As a team, we all agreed and decided on having a group chat over text message for us all to communicate with eachother.
@@ -34,10 +41,10 @@ To develop this software, we will be using the python programming language. We w
 
 |Responsibility                      |Team Member(s)              |
 |------------------------------------|----------------------------|
-|Conducting Meetings                 |      Honami                      |
-|Maintaining Team Assignment List    |       Honami                     |
-|Ensuring GitHub is Working          |           Ashley                 |
-|Maintaining Documentation           |               Emily             |
+|Conduct Meetings                 |      Honami                      |
+|Maintain Team Assignment List    |       Honami                     |
+|Ensure GitHub is Functional          |           Ashley                 |
+|Maintain Documentation           |               Emily             |
 |Create & Display Presentations      |               Mark and Emily           |
 |Submit Team Assignments             |                Mark            |
 
