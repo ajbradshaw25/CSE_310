@@ -2,31 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/1863928073.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Find a group | Study Group Matcher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700;900&family=Noto+Sans:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="style.css">
+    <title>Find a group | Study Group Matcher</title>
   </head>
   <body>
     <div class="layout">
       <!-- Side Bar -->
       <aside class="sidebar">
         <div class="brand">
-          <div class="brand-name">Study Group Matcher</div>
-          <div class="brand-sub">CAMPUS COMMUNITY</div>
+          <div class="brand-logo"><i class="fa-solid fa-book-open"></i></div>
+          <div> <!-- wrap the two names -->
+            <div class="brand-name">Study Group Matcher</div>
+            <div class="brand-sub">CAMPUS COMMUNITY</div>
+          </div>
         </div>
 
         <nav class="nav">
-          <a class="nav-item" href="#">Home</a>
-          <a class="nav-item is-active" href="#">Find a Group</a>
-          <a class="nav-item" href="#">Messages</a>
-          <a class="nav-item" href="#">Schedule</a>
-          <a class="nav-item" href="#">My Groups</a>
+          <!-- an icon at the start of each menu item -->
+          <a class="nav-item" href="#"><i class="fa-solid fa-house"></i>Home</a>
+          <a class="nav-item is-active" href="#"><i class="fa-solid fa-magnifying-glass"></i>Find a Group</a>
+          <a class="nav-item" href="#"><i class="fa-regular fa-message"></i>Messages<span class="nav-badge" id="unread-badge"></span></a>
+          <a class="nav-item" href="#"><i class="fa-regular fa-calendar"></i>Schedule</a>
+          <a class="nav-item" href="#"><i class="fa-solid fa-user-group"></i>My Groups</a>
         </nav>
+
+        <!-- profile card. JavaScript fills in the logged-in user's name, major and progress -->
+        <div class="profile-card" id="profile-card"></div>
       </aside>
 
       <!-- Main Area -->
@@ -37,47 +40,52 @@
             <h1 class="topbar-title">Find a Group</h1>
           </div>
           <div class="topbar-actions">
-            <button class="bell-button">
-              <i class="fa-regular fa-bell"></i>
-            </button>
-            <a class="btn-primary" href="#">+ Create a Group</a>
+            <button class="bell-button"><i class="fa-regular fa-bell"></i><span class="bell-dot"></span></button> <!-- bell-dot -->
+            <a class="btn-primary" href="#"><i class="fa-solid fa-plus"></i> Create a Group</a> <!-- plus icon -->
           </div>
         </header>
 
-        <section class="hero">
-          <div class="hero-eyebrow">Find your study buddy</div>
-          <h2 class="hero-title">
-            Studying is easier<br />when we do it together.
-          </h2>
-          <p class="hero-lead">
-            Find study partners who match your classes, major, and schedule.
-          </p>
-        </section>
+        <div class="content"> <!-- wraps everything under the top bar -->
 
-        <div class="search-row">
-          <label class="search-box">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input
-              type="search"
-              id="search-input"
-              placeholder="Search by class, course code, or keyword"
-            />
-          </label>
-          <div class="filters">
-            <button class="filter is-active">All</button>
-            <button class="filter">Major</button>
-            <button class="filter">Availability</button>
-            <button class="filter">Class</button>
+          <section class="hero">
+            <div class="hero-eyebrow">Find your study buddy</div>
+            <h2 class="hero-title">Studying is easier<br>when we do it together.</h2>
+            <p class="hero-lead">Find study partners who match your classes, major, and schedule.</p>
+            <!-- decorations -->
+            <div class="hero-ring"></div>
+            <div class="hero-square"></div>
+            <div class="hero-badge" id="best-match"></div> <!-- JavaScript puts the best match % here -->
+          </section>
+
+          <div class="search-row">
+            <label class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="search" id="search-input" placeholder="Search by class, course code, or keyword">
+            </label>
+            <div class="filters">
+              <button class="filter is-active">All</button>
+              <button class="filter">Major</button>
+              <button class="filter">Availability</button>
+              <button class="filter">Class</button>
+            </div>
+          </div>
+
+          <div class="columns"> <!-- left = list, right = detail -->
+
+            <section class="recommended">
+              <h2 class="section-title">Recommended Groups</h2>
+              <p class="section-sub">Curated based on your profile and availability</p>
+              <div class="group-list" id="group-list">
+
+                <!-- JavaScript puts the group cards here -->
+              </div>
+            </section>
+
+            <!-- detail panel. JavaScript fills it with the selected group -->
+            <aside class="detail" id="detail"></aside>
+
           </div>
         </div>
-
-        <section class="recommended">
-          <h2 class="section-title">Recommended Groups</h2>
-          <p class="section-sub">
-            Curated based on your profile and availability
-          </p>
-          <div class="group-list" id="group-list"></div>
-        </section>
       </main>
     </div>
   </body>
