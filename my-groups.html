@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700;900&family=Noto+Sans:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <title>My Groups | Study Group Matcher</title>
+  </head>
+  <body>
+    <div class="layout">
+      <!-- Side Bar -->
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-logo"><i class="fa-solid fa-book-open"></i></div>
+          <div>
+            <div class="brand-name">Study Group Matcher</div>
+            <div class="brand-sub">CAMPUS COMMUNITY</div>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <a class="nav-item" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+          <a class="nav-item" href="index.html"><i class="fa-solid fa-magnifying-glass"></i>Find a Group</a>
+          <a class="nav-item" href="#"><i class="fa-regular fa-message"></i>Messages<span class="nav-badge" id="unread-badge">3</span></a>
+          <a class="nav-item" href="#"><i class="fa-regular fa-calendar"></i>Schedule</a>
+          <a class="nav-item is-active" href="my-groups.html"><i class="fa-solid fa-user-group"></i>My Groups</a>
+        </nav>
+
+        <div class="profile-card" id="profile-card">
+          <!-- SAMPLE: JavaScript will put the logged-in student here later -->
+          <div class="profile-row">
+            <div class="avatar avatar-lg avatar-yellow">GN</div>
+            <div>
+              <div class="profile-name">Guest Name</div>
+              <div class="profile-meta">CSE · Year 2</div>
+            </div>
+          </div>
+          <div class="progress"><div class="progress-bar" style="width: 80%"></div></div>
+          <div class="progress-label"><span>Profile completion</span><span>80%</span></div>
+        </div>
+      </aside>
+
+      <!-- Main Area -->
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <div class="topbar-school">BYU-Idaho</div>
+            <h1 class="topbar-title">My Groups</h1>
+          </div>
+          <div class="topbar-actions">
+            <button class="bell-button"><i class="fa-regular fa-bell"></i><span class="bell-dot"></span></button>
+            <a class="btn-primary" href="#"><i class="fa-solid fa-plus"></i><span class="btn-label">Create a Group</span></a>
+          </div>
+        </header>
+
+        <div class="content">
+
+          <!-- SAMPLE: the numbers, cards, and sessions below are example data.
+               Later, JavaScript will make them from the Python data. -->
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-value">2</div>
+              <div class="stat-label">Groups joined</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">3</div>
+              <div class="stat-label">Sessions this week</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">3</div>
+              <div class="stat-label">Unread messages</div>
+            </div>
+          </div>
+
+          <div class="columns">
+
+            <section>
+              <h2 class="section-title">Your Groups</h2>
+              <p class="section-sub">Groups you have joined</p>
+
+              <div class="my-group-list" id="my-group-list">
+                <article class="my-group-card theme-purple">
+                  <div class="card-tags">
+                    <span class="card-subject">Web Backend Development</span>
+                    <span class="card-code">CSE 340</span>
+                  </div>
+                  <h3 class="card-title">CSE 340 Study Group</h3>
+                  <div class="next-session">
+                    <i class="fa-regular fa-clock"></i>
+                    <div>
+                      <div class="next-label">Next session</div>
+                      <div class="next-time">Mon 3 PM · Library 2F</div>
+                    </div>
+                  </div>
+                  <div class="my-group-foot">
+                    <div class="avatars">
+                      <span class="avatar avatar-yellow">MK</span>
+                      <span class="avatar avatar-lilac">RN</span>
+                      <span class="avatar avatar-yellow">AO</span>
+                      <span class="avatar avatar-lilac">HG</span>
+                    </div>
+                    <a class="btn-small" href="#">Open chat</a>
+                  </div>
+                </article>
+
+                <article class="my-group-card theme-orange">
+                  <div class="card-tags">
+                    <span class="card-subject">Introduction to Databases</span>
+                    <span class="card-code">ITM 111</span>
+                  </div>
+                  <h3 class="card-title">ITM 111 Study Group</h3>
+                  <div class="next-session">
+                    <i class="fa-regular fa-clock"></i>
+                    <div>
+                      <div class="next-label">Next session</div>
+                      <div class="next-time">Tue 5 PM · Online</div>
+                    </div>
+                  </div>
+                  <div class="my-group-foot">
+                    <div class="avatars">
+                      <span class="avatar avatar-yellow">SO</span>
+                      <span class="avatar avatar-lilac">KT</span>
+                      <span class="avatar avatar-yellow">HG</span>
+                    </div>
+                    <a class="btn-small" href="#">Open chat</a>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <aside class="upcoming">
+              <h2 class="upcoming-title">Upcoming Sessions</h2>
+              <ul class="session-list" id="session-list">
+                <li class="session-item">
+                  <div class="session-date theme-purple">
+                    <div class="session-day">MON</div>
+                    <div class="session-num">3</div>
+                  </div>
+                  <div>
+                    <div class="session-name">CSE 340 Study Group</div>
+                    <div class="session-meta">3 PM · Library 2F</div>
+                  </div>
+                </li>
+                <li class="session-item">
+                  <div class="session-date theme-orange">
+                    <div class="session-day">TUE</div>
+                    <div class="session-num">4</div>
+                  </div>
+                  <div>
+                    <div class="session-name">ITM 111 Study Group</div>
+                    <div class="session-meta">5 PM · Online</div>
+                  </div>
+                </li>
+                <li class="session-item">
+                  <div class="session-date theme-purple">
+                    <div class="session-day">WED</div>
+                    <div class="session-num">5</div>
+                  </div>
+                  <div>
+                    <div class="session-name">CSE 340 Study Group</div>
+                    <div class="session-meta">3 PM · Library 2F</div>
+                  </div>
+                </li>
+              </ul>
+            </aside>
+
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

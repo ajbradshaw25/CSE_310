@@ -1,53 +1,101 @@
 :root {
-    --bg: #f7f6f1;
-    --ink: #20201e;
-    --white: #ffffff;
-    --line: #deddd6;
-    --muted: #77756f;
-    --purple: #5b5bd6;
-    --font-sans: "Noto Sans", sans-serif;
-    --font-display: "DM Sans", "Noto Sans", sans-serif;
-    --purple-dark: #3f3fa8;
-    --orange: #ff7a59;
-    --yellow: #ffe06c;
-    --green: #2aa889;
-    --lilac: #d9d7ff;
-    --line-soft: #eceae3;
-    --chip: #f0eee7;
-    --placeholder: #aaa8a1;
-    --muted-3: #99978f;
+  --bg: #f7f6f1;
+  --ink: #20201e;
+  --white: #ffffff;
+  --line: #deddd6;
+  --line-soft: #eceae3;
+  --chip: #f0eee7;
+  --muted: #77756f;
+  --muted-3: #99978f;
+  --placeholder: #aaa8a1;
+  --purple: #5b5bd6;
+  --purple-dark: #3f3fa8;
+  --orange: #ff7a59;
+  --yellow: #ffe06c;
+  --green: #2aa889;
+  --lilac: #d9d7ff;
+  --font-sans: "Noto Sans", sans-serif;
+  --font-display: "DM Sans", "Noto Sans", sans-serif;
+}
+
+/* colours for each group */
+.theme-orange { --accent: #ff7a59; --pale: #fff0e8; }
+.theme-purple { --accent: #5b5bd6; --pale: #eeeeff; }
+.theme-green  { --accent: #2aa889; --pale: #e6f7f1; }
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--font-sans);
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
 }
 
+button {
+  font-family: inherit;
+}
+
+h2, h3, p {
+  margin: 0;
+}
+
+/* ===== Layout ===== */
 .layout {
-    display: flex;
-    min-height: 100vh;
-}
-
-.sidebar {
-    width: 256px;
-    padding: 28px 20px;
-    border-right: 1px solid var(--line);
+  display: flex;
+  min-height: 100vh;
 }
 
 .main {
-    flex: 1;
+  flex: 1;
+}
+
+.content {
+  padding: 32px;
+}
+
+/* left: list, right: panel */
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  width: 256px;
+  height: 100vh;
+  padding: 28px 20px;
+  border-right: 1px solid var(--line);
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 40px;
   padding: 0 8px;
 }
 
+.brand-logo {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--ink);
+  color: var(--white);
+}
+
 .brand-name {
   font-family: var(--font-display);
-  font-size: 16px;
   font-weight: 700;
 }
 
@@ -77,6 +125,11 @@ body {
   text-decoration: none;
 }
 
+.nav-item i {
+  width: 20px;
+  text-align: center;
+}
+
 .nav-item:hover {
   background: var(--white);
 }
@@ -86,6 +139,65 @@ body {
   color: var(--white);
 }
 
+.nav-badge {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 10px;
+}
+
+.profile-card {
+  margin-top: auto;   /* push to the bottom */
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+}
+
+.profile-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.profile-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.profile-meta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.progress {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--line-soft);
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--purple);
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* ===== Top bar ===== */
 .topbar {
   display: flex;
   align-items: center;
@@ -114,16 +226,35 @@ body {
 }
 
 .bell-button {
+  position: relative;
   width: 40px;
   height: 40px;
   border: 1px solid var(--line);
   border-radius: 50%;
   background: var(--white);
+  font-size: 16px;
   cursor: pointer;
 }
 
+.bell-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  background: var(--orange);
+}
+
+/* ===== Buttons ===== */
 .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   padding: 10px 16px;
+  border: 0;
   border-radius: 12px;
   background: var(--purple);
   color: var(--white);
@@ -131,16 +262,74 @@ body {
   font-weight: 700;
   text-decoration: none;
   box-shadow: 0 4px 0 var(--purple-dark);
+  cursor: pointer;
 }
 
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+.btn-block {
+  width: 100%;
+  padding: 14px 0;
+}
+
+.btn-small {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--ink);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* ===== Avatars ===== */
+.avatars {
+  display: flex;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.avatars .avatar + .avatar {
+  margin-left: -8px;   /* overlap */
+}
+
+.avatar-lg {
+  width: 40px;
+  height: 40px;
+  font-size: 12px;
+}
+
+.avatar-yellow { background: var(--yellow); }
+.avatar-lilac  { background: var(--lilac); }
+
+/* ===== Hero ===== */
 .hero {
   position: relative;
   overflow: hidden;
-  margin: 0 0 28px;
+  margin-bottom: 28px;
   padding: 32px 40px;
   border-radius: 28px;
   background: var(--ink);
   color: var(--white);
+}
+
+.hero-eyebrow,
+.hero-title,
+.hero-lead {
+  position: relative;
+  z-index: 1;   /* text on top of the shapes */
+  max-width: 600px;
 }
 
 .hero-eyebrow {
@@ -153,190 +342,15 @@ body {
 }
 
 .hero-title {
-  margin: 0;
   font-family: var(--font-display);
   font-size: 40px;
   line-height: 1.25;
 }
 
 .hero-lead {
-  margin: 12px 0 0;
+  margin-top: 12px;
   font-size: 14px;
   color: #c9c7c0;
-}
-
-/* --- Count padding and border inside the width (makes sizes easier to reason about) --- */
-* {
-  box-sizing: border-box;
-}
-
-/* --- Boxes that JavaScript fills later: hide them while they are still empty --- */
-.profile-card:empty,
-.nav-badge:empty,
-.hero-badge:empty,
-.detail:empty {
-  display: none;
-}
-
-button {
-  font-family: inherit;
-}
-
-/* --- Sidebar: logo box, icons, badge --- */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.brand-logo {
-  display: grid;
-  place-items: center; /* center the icon inside the box */
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  background: var(--ink);
-  color: var(--white);
-}
-
-.nav-item i {
-  width: 20px; /* same width for every icon so the words line up */
-  text-align: center;
-}
-
-.nav-badge {
-  display: grid;
-  place-items: center;
-  width: 20px;
-  height: 20px;
-  margin-left: auto; /* push to the right end */
-  border-radius: 50%;
-  background: var(--orange);
-  color: var(--white);
-  font-size: 10px;
-}
-
-.sidebar {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* --- Sidebar: profile card --- */
-.profile-card {
-  margin-top: auto; /* push to the bottom of the sidebar */
-  padding: 16px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: var(--white);
-}
-
-.profile-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.profile-name {
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.profile-meta {
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.progress {
-  height: 6px;
-  overflow: hidden;
-  border-radius: 999px;
-  background: var(--line-soft);
-}
-
-.progress-bar {
-  height: 100%;       
-  border-radius: 999px;
-  background: var(--purple);
-}
-
-.progress-label {
-  display: flex;
-  justify-content: space-between; /* one at the left end, one at the right end */
-  margin-top: 8px;
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--muted);
-}
-
-/* --- Avatars (round initials) --- */
-.avatar {
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  border: 2px solid var(--white);
-  border-radius: 50%;
-  font-size: 9px;
-  font-weight: 700;
-}
-
-.avatar-lg {
-  width: 40px;
-  height: 40px;
-  font-size: 12px;
-}
-
-.avatar-yellow { background: var(--yellow); }
-.avatar-lilac  { background: var(--lilac); }
-
-.avatars {
-  display: flex;
-}
-
-/* every avatar except the first moves 8px left, so they overlap */
-.avatars .avatar + .avatar {
-  margin-left: -8px;
-}
-
-/* --- Top bar: bell dot and Create button icon --- */
-.bell-button {
-  position: relative;
-  font-size: 16px;
-}
-
-.bell-dot {
-  position: absolute; /* placed relative to .bell-button */
-  top: 8px;
-  right: 8px;
-  width: 8px;
-  height: 8px;
-  border: 2px solid var(--white);
-  border-radius: 50%;
-  background: var(--orange);
-}
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* --- Content area: spacing around everything under the top bar --- */
-.content {
-  padding: 32px;
-}
-
-/* --- Hero: decorations --- */
-.hero-eyebrow,
-.hero-title,
-.hero-lead {
-  position: relative;
-  z-index: 1; /* text sits on top of the shapes */
-  max-width: 600px;
 }
 
 .hero-ring {
@@ -377,7 +391,7 @@ button {
   font-weight: 900;
 }
 
-/* --- Search box and filter buttons --- */
+/* ===== Search and filters ===== */
 .search-row {
   display: flex;
   gap: 12px;
@@ -399,11 +413,10 @@ button {
 .search-box input {
   width: 100%;
   border: 0;
-  outline: none; /* remove the blue frame when typing */
+  outline: none;
   background: transparent;
   font-family: inherit;
   font-size: 14px;
-  color: var(--ink);
 }
 
 .filters {
@@ -431,16 +444,8 @@ button {
   color: var(--white);
 }
 
-/* --- Two columns: group list (left) and detail panel (right) --- */
-.columns {
-  display: grid;
-  grid-template-columns: 1fr 360px; /* left: the rest, right: 360px */
-  gap: 28px;
-  align-items: start;
-}
-
+/* ===== Section headings ===== */
 .section-title {
-  margin: 0;
   font-family: var(--font-display);
   font-size: 20px;
 }
@@ -451,7 +456,7 @@ button {
   color: var(--muted);
 }
 
-/* --- Group cards --- */
+/* ===== Find a Group: group cards ===== */
 .group-list {
   display: flex;
   flex-direction: column;
@@ -466,23 +471,20 @@ button {
   border-radius: 16px;
   background: var(--white);
   cursor: pointer;
-  transition: transform 0.15s, box-shadow 0.15s; /* animate the hover change */
 }
 
 .group-card:hover {
-  transform: translateY(-2px); /* move up 2px */
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
 }
 
 .group-card.is-selected {
   border-color: var(--purple);
-  box-shadow: 0 0 0 2px rgba(91, 91, 214, 0.15);
 }
 
 .card-icon {
   display: grid;
   place-items: center;
-  flex-shrink: 0; /* never squeeze this box */
+  flex-shrink: 0;
   width: 56px;
   height: 56px;
   border-radius: 16px;
@@ -499,7 +501,7 @@ button {
 
 .card-body {
   flex: 1;
-  min-width: 0; /* lets long text shrink instead of pushing the card wider */
+  min-width: 0;
 }
 
 .card-tags {
@@ -524,16 +526,16 @@ button {
 }
 
 .card-title {
-  margin: 8px 0 0;
+  margin-top: 8px;
   font-family: var(--font-display);
   font-size: 18px;
 }
 
 .card-desc {
-  margin: 4px 0 0;
+  margin-top: 4px;
   overflow: hidden;
-  white-space: nowrap; /* keep on one line */
-  text-overflow: ellipsis; /* show "..." when too long */
+  white-space: nowrap;
+  text-overflow: ellipsis;   /* "..." when too long */
   font-size: 12px;
   color: var(--muted);
 }
@@ -544,20 +546,17 @@ button {
   margin-top: 16px;
   font-size: 12px;
   font-weight: 600;
-  color: #55534f;
 }
 
-.card-meta span {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.card-meta i {
+  margin-right: 6px;
 }
 
 .card-side {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* line up on the right */
-  justify-content: space-between; /* match at top, members at bottom */
+  align-items: flex-end;
+  justify-content: space-between;
   padding-left: 20px;
   border-left: 1px solid var(--line-soft);
 }
@@ -565,10 +564,8 @@ button {
 .match-label {
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--muted);
-  text-align: right;
 }
 
 .match-value {
@@ -590,14 +587,9 @@ button {
   color: var(--muted);
 }
 
-/* --- Colour themes for each subject --- */
-.theme-orange { --accent: #ff7a59; --pale: #fff0e8; }
-.theme-purple { --accent: #5b5bd6; --pale: #eeeeff; }
-.theme-green  { --accent: #2aa889; --pale: #e6f7f1; }
-
-/* --- Detail panel (right) --- */
+/* ===== Find a Group: detail panel ===== */
 .detail {
-  position: sticky; /* stays in view while the list scrolls */
+  position: sticky;
   top: 24px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -616,7 +608,6 @@ button {
 
 .detail-top {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 20px;
 }
@@ -632,6 +623,7 @@ button {
 }
 
 .match-pill {
+  height: fit-content;
   padding: 6px 12px;
   border-radius: 999px;
   background: #e6f7f1;
@@ -647,14 +639,13 @@ button {
 }
 
 .detail-title {
-  margin: 8px 0 0;
+  margin-top: 8px;
   font-family: var(--font-display);
   font-size: 24px;
-  line-height: 1.25;
 }
 
 .detail-desc {
-  margin: 12px 0 0;
+  margin-top: 12px;
   font-size: 14px;
   line-height: 24px;
   color: #66645f;
@@ -668,19 +659,13 @@ button {
   padding: 20px 0;
   border-top: 1px solid var(--line-soft);
   border-bottom: 1px solid var(--line-soft);
-  list-style: none; /* remove the bullet points */
+  list-style: none;
   font-size: 14px;
-}
-
-.detail-facts li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
 }
 
 .detail-facts i {
   width: 18px;
-  text-align: center;
+  margin-right: 12px;
   color: var(--muted);
 }
 
@@ -694,40 +679,263 @@ button {
 .detail-members {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 12px;
   margin-bottom: 20px;
 }
 
-.detail-members .member-count {
-  margin-left: 8px;
-  font-size: 12px;
-  font-weight: 400;
-}
-
-/* Request to Join: full-width version of the purple button */
-.btn-block {
-  justify-content: center;
-  width: 100%;
-  padding: 14px 0;
-  border: 0;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-}
-
-/* After clicking Request to Join (JavaScript adds this class later) */
-.btn-primary.is-requested {
-  background: var(--green);
-  box-shadow: 0 4px 0 #1d7a63;
-  cursor: default;
-  transform: none;
-}
-
 .detail-note {
-  margin: 12px 0 0;
+  margin-top: 12px;
   text-align: center;
   font-size: 10px;
   color: var(--muted-3);
+}
+
+/* ===== My Groups: number boxes ===== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.stat {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ===== My Groups: group cards ===== */
+.my-group-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.my-group-card {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--accent);
+  border-radius: 16px;
+  background: var(--white);
+}
+
+.next-session {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--pale);
+  font-size: 12px;
+}
+
+.next-session i {
+  color: var(--accent);
+}
+
+.next-label {
+  color: var(--muted);
+}
+
+.next-time {
+  font-weight: 700;
+}
+
+.my-group-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+/* ===== My Groups: upcoming sessions ===== */
+.upcoming {
+  position: sticky;
+  top: 24px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+}
+
+.upcoming-title {
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-size: 16px;
+}
+
+.session-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.session-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.session-date {
+  width: 48px;
+  padding: 6px 0;
+  border-radius: 12px;
+  background: var(--pale);
+  color: var(--accent);
+  font-weight: 800;
+  text-align: center;
+}
+
+.session-day {
+  font-size: 10px;
+}
+
+.session-num {
+  font-size: 18px;
+}
+
+.session-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.session-meta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ===== Tablets: one column ===== */
+@media (max-width: 1100px) {
+  .columns {
+    grid-template-columns: minmax(0, 1fr);   /* minmax(0, ...) stops long text from widening the page */
+  }
+
+  .detail,
+  .upcoming {
+    position: static;
+  }
+
+  .search-row {
+    flex-direction: column;
+  }
+
+  .hero-badge {
+    display: none;
+  }
+}
+
+/* ===== Phones ===== */
+@media (max-width: 768px) {
+  .main {
+    min-width: 0;
+    padding-bottom: 72px;   /* room for the menu bar */
+  }
+
+  .content {
+    padding: 16px;
+  }
+
+  /* sidebar becomes a menu bar at the bottom */
+  .sidebar {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: auto;
+    padding: 6px 8px;
+    border-top: 1px solid var(--line);
+    background: var(--white);
+  }
+
+  .brand,
+  .profile-card,
+  .btn-label,
+  .hero-ring,
+  .hero-square {
+    display: none;
+  }
+
+  .nav {
+    flex-direction: row;
+  }
+
+  .nav-item {
+    position: relative;
+    flex: 1;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 2px;
+    font-size: 10px;
+  }
+
+  .nav-badge {
+    position: absolute;
+    top: 2px;
+    right: 20%;
+  }
+
+  .topbar {
+    padding: 0 16px;
+  }
+
+  .hero {
+    padding: 28px 24px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+  }
+
+  .filters {
+    overflow-x: auto;
+  }
+
+  .filter {
+    white-space: nowrap;
+  }
+
+  .group-card {
+    flex-direction: column;
+  }
+
+  .card-meta {
+    flex-wrap: wrap;
+  }
+
+  .card-side {
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .stat {
+    padding: 14px;
+  }
+
+  .stat-value {
+    font-size: 22px;
+  }
+
+  .my-group-list {
+    grid-template-columns: 1fr;
+  }
 }

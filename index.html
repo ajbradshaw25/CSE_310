@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700;900&family=Noto+Sans:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="style.css">
@@ -13,23 +14,32 @@
       <aside class="sidebar">
         <div class="brand">
           <div class="brand-logo"><i class="fa-solid fa-book-open"></i></div>
-          <div> <!-- wrap the two names -->
+          <div>
             <div class="brand-name">Study Group Matcher</div>
             <div class="brand-sub">CAMPUS COMMUNITY</div>
           </div>
         </div>
 
         <nav class="nav">
-          <!-- an icon at the start of each menu item -->
-          <a class="nav-item" href="#"><i class="fa-solid fa-house"></i>Home</a>
-          <a class="nav-item is-active" href="#"><i class="fa-solid fa-magnifying-glass"></i>Find a Group</a>
-          <a class="nav-item" href="#"><i class="fa-regular fa-message"></i>Messages<span class="nav-badge" id="unread-badge"></span></a>
+          <a class="nav-item" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+          <a class="nav-item is-active" href="index.html"><i class="fa-solid fa-magnifying-glass"></i>Find a Group</a>
+          <a class="nav-item" href="#"><i class="fa-regular fa-message"></i>Messages<span class="nav-badge" id="unread-badge">3</span></a>
           <a class="nav-item" href="#"><i class="fa-regular fa-calendar"></i>Schedule</a>
-          <a class="nav-item" href="#"><i class="fa-solid fa-user-group"></i>My Groups</a>
+          <a class="nav-item" href="my-groups.html"><i class="fa-solid fa-user-group"></i>My Groups</a>
         </nav>
 
-        <!-- profile card. JavaScript fills in the logged-in user's name, major and progress -->
-        <div class="profile-card" id="profile-card"></div>
+        <div class="profile-card" id="profile-card">
+          <!-- SAMPLE: JavaScript will put the logged-in student here later -->
+          <div class="profile-row">
+            <div class="avatar avatar-lg avatar-yellow">GN</div>
+            <div>
+              <div class="profile-name">Guest Name</div>
+              <div class="profile-meta">CSE · Year 2</div>
+            </div>
+          </div>
+          <div class="progress"><div class="progress-bar" style="width: 80%"></div></div>
+          <div class="progress-label"><span>Profile completion</span><span>80%</span></div>
+        </div>
       </aside>
 
       <!-- Main Area -->
@@ -40,21 +50,20 @@
             <h1 class="topbar-title">Find a Group</h1>
           </div>
           <div class="topbar-actions">
-            <button class="bell-button"><i class="fa-regular fa-bell"></i><span class="bell-dot"></span></button> <!-- bell-dot -->
-            <a class="btn-primary" href="#"><i class="fa-solid fa-plus"></i> Create a Group</a> <!-- plus icon -->
+            <button class="bell-button"><i class="fa-regular fa-bell"></i><span class="bell-dot"></span></button>
+            <a class="btn-primary" href="#"><i class="fa-solid fa-plus"></i><span class="btn-label">Create a Group</span></a>
           </div>
         </header>
 
-        <div class="content"> <!-- wraps everything under the top bar -->
+        <div class="content">
 
           <section class="hero">
             <div class="hero-eyebrow">Find your study buddy</div>
             <h2 class="hero-title">Studying is easier<br>when we do it together.</h2>
             <p class="hero-lead">Find study partners who match your classes, major, and schedule.</p>
-            <!-- decorations -->
             <div class="hero-ring"></div>
             <div class="hero-square"></div>
-            <div class="hero-badge" id="best-match"></div> <!-- JavaScript puts the best match % here -->
+            <div class="hero-badge" id="best-match">96%</div> <!-- SAMPLE: JavaScript puts the best match % here later -->
           </section>
 
           <div class="search-row">
@@ -70,19 +79,123 @@
             </div>
           </div>
 
-          <div class="columns"> <!-- left = list, right = detail -->
+          <div class="columns">
 
             <section class="recommended">
               <h2 class="section-title">Recommended Groups</h2>
               <p class="section-sub">Curated based on your profile and availability</p>
               <div class="group-list" id="group-list">
+                <!-- SAMPLE: three example cards so the CSS can be checked.
+                     JavaScript will make these cards from the Python data later. -->
+                <div class="group-card is-selected">
+                  <div class="card-icon theme-purple"><div class="card-icon-shape"></div></div>
+                  <div class="card-body">
+                    <div class="card-tags">
+                      <span class="card-subject">Applied Programming</span>
+                      <span class="card-code">CSE 310</span>
+                    </div>
+                    <h3 class="card-title">CSE 310 Study Group</h3>
+                    <p class="card-desc">Work through the weekly modules and review each other's code.</p>
+                    <div class="card-meta">
+                      <span><i class="fa-regular fa-clock"></i>Mon 3 PM, Wed 3 PM</span>
+                      <span><i class="fa-solid fa-location-dot"></i>Library 2F</span>
+                    </div>
+                  </div>
+                  <div class="card-side">
+                    <div>
+                      <div class="match-label">Match</div>
+                      <div class="match-value">96%</div>
+                    </div>
+                    <div class="member-row">
+                      <div class="avatars"><span class="avatar avatar-yellow">MK</span><span class="avatar avatar-lilac">RN</span><span class="avatar avatar-yellow">AO</span></div>
+                      <span class="member-count">3 / 5</span>
+                    </div>
+                  </div>
+                </div>
 
-                <!-- JavaScript puts the group cards here -->
+                <div class="group-card">
+                  <div class="card-icon theme-orange"><div class="card-icon-shape"></div></div>
+                  <div class="card-body">
+                    <div class="card-tags">
+                      <span class="card-subject">Data Structures</span>
+                      <span class="card-code">CSE 212</span>
+                    </div>
+                    <h3 class="card-title">CSE 212 Study Group</h3>
+                    <p class="card-desc">Practice stacks, queues, and trees before the exam.</p>
+                    <div class="card-meta">
+                      <span><i class="fa-regular fa-clock"></i>Tue 5 PM</span>
+                      <span><i class="fa-solid fa-location-dot"></i>Science Building 120</span>
+                    </div>
+                  </div>
+                  <div class="card-side">
+                    <div>
+                      <div class="match-label">Match</div>
+                      <div class="match-value">91%</div>
+                    </div>
+                    <div class="member-row">
+                      <div class="avatars"><span class="avatar avatar-yellow">SO</span><span class="avatar avatar-lilac">KT</span></div>
+                      <span class="member-count">2 / 4</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="group-card">
+                  <div class="card-icon theme-green"><div class="card-icon-shape"></div></div>
+                  <div class="card-body">
+                    <div class="card-tags">
+                      <span class="card-subject">Web Frontend Development</span>
+                      <span class="card-code">WDD 231</span>
+                    </div>
+                    <h3 class="card-title">WDD 231 Study Group</h3>
+                    <p class="card-desc">Share HTML and CSS projects and give feedback.</p>
+                    <div class="card-meta">
+                      <span><i class="fa-regular fa-clock"></i>Thu 7 PM</span>
+                      <span><i class="fa-solid fa-location-dot"></i>Online</span>
+                    </div>
+                  </div>
+                  <div class="card-side">
+                    <div>
+                      <div class="match-label">Match</div>
+                      <div class="match-value">87%</div>
+                    </div>
+                    <div class="member-row">
+                      <div class="avatars"><span class="avatar avatar-yellow">HN</span><span class="avatar avatar-lilac">YM</span><span class="avatar avatar-yellow">SK</span><span class="avatar avatar-lilac">ES</span></div>
+                      <span class="member-count">4 / 6</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
 
-            <!-- detail panel. JavaScript fills it with the selected group -->
-            <aside class="detail" id="detail"></aside>
+            <!-- Detail panel. SAMPLE: shows the first card. JavaScript will fill it with the selected group later -->
+            <aside class="detail theme-purple" id="detail">
+              <div class="detail-stripe"></div>
+              <div class="detail-inner">
+                <div class="detail-top">
+                  <div class="detail-icon"><i class="fa-solid fa-book-open"></i></div>
+                  <span class="match-pill">96% match</span>
+                </div>
+                <div class="detail-subject">Applied Programming · CSE 310</div>
+                <h3 class="detail-title">CSE 310 Study Group</h3>
+                <p class="detail-desc">Work through the weekly modules and review each other's code.</p>
+                <ul class="detail-facts">
+                  <li><i class="fa-regular fa-clock"></i>Shared availability: Mon 3 PM, Wed 3 PM</li>
+                  <li><i class="fa-solid fa-location-dot"></i>Library 2F</li>
+                  <li><i class="fa-solid fa-user-group"></i>2 spots remaining</li>
+                </ul>
+                <div class="detail-members-label">Members</div>
+                <div class="detail-members">
+                  <div class="avatars">
+                    <span class="avatar avatar-yellow">MK</span>
+                    <span class="avatar avatar-lilac">RN</span>
+                    <span class="avatar avatar-yellow">AO</span>
+                  </div>
+                  <span class="member-count">3 / 5</span>
+                </div>
+                <button class="btn-primary btn-block">Request to Join</button>
+                <p class="detail-note">You can message the group after requesting</p>
+              </div>
+            </aside>
 
           </div>
         </div>
