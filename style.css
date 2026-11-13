@@ -819,10 +819,173 @@ h2, h3, p {
   color: var(--muted);
 }
 
+/* ===== Schedule page ===== */
+.schedule {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* Upper bar */
+.week-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.week-label {
+  font-family: var(--font-display);
+  font-size: 22px;
+}
+
+.week-arrows {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+  cursor: pointer;
+}
+
+/* Boxes for 7 days */
+.day-strip {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 28px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+}
+
+.day {
+  padding: 10px 0;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.day-name {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.day-num {
+  margin-top: 4px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.day.is-today {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.day.is-today .day-name {
+  color: #c9c7c0;
+}
+
+/* Dots with schedule */
+.day-dots {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  height: 6px;
+  margin-top: 5px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Heading / Tomorrow / Next week） */
+.day-group {
+  margin-bottom: 28px;
+}
+
+.group-head {
+  display: flex;
+  align-items: baseline; 
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.group-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+}
+
+.group-date {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Plans */
+.session-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 12px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--accent); 
+  border-radius: 16px;
+  background: var(--white);
+}
+
+.session-card .session-date {
+  flex-shrink: 0;
+  width: 56px;
+}
+
+.session-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.session-title {
+  margin-top: 4px;
+  font-family: var(--font-display);
+  font-size: 17px;
+}
+
+.session-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #55534e;
+}
+
+.session-info i {
+  margin-right: 6px;
+  color: var(--muted);
+}
+
+.session-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
 /* ===== Tablets: one column ===== */
 @media (max-width: 1100px) {
   .columns {
-    grid-template-columns: minmax(0, 1fr);   /* minmax(0, ...) stops long text from widening the page */
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .detail,
