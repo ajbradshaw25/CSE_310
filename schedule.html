@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700;900&family=Noto+Sans:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <title>Schedule | Study Group Matcher</title>
+  </head>
+  <body>
+    <div class="layout">
+      <!-- Side Bar -->
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-logo"><i class="fa-solid fa-book-open"></i></div>
+          <div>
+            <div class="brand-name">Study Group Matcher</div>
+            <div class="brand-sub">CAMPUS COMMUNITY</div>
+          </div>
+        </div>
+
+        <a class="nav-item" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+        <a class="nav-item" href="index.html"><i class="fa-solid fa-magnifying-glass"></i>Find a Group</a>
+        <a class="nav-item" href="#"><i class="fa-regular fa-message"></i>Messages<span class="nav-badge" id="unread-badge">3</span></a>
+        <a class="nav-item is-active" href="schedule.html"><i class="fa-regular fa-calendar"></i>Schedule</a>
+        <a class="nav-item" href="my-groups.html"><i class="fa-solid fa-user-group"></i>My Groups</a>
+
+        <div class="profile-card" id="profile-card">
+          <!-- SAMPLE: JavaScript will put the logged-in student here later -->
+          <div class="profile-row">
+            <div class="avatar avatar-lg avatar-yellow">GN</div>
+            <div>
+              <div class="profile-name">Guest Name</div>
+              <div class="profile-meta">CSE · Year 2</div>
+            </div>
+          </div>
+          <div class="progress"><div class="progress-bar" style="width: 80%"></div></div>
+          <div class="progress-label"><span>Profile completion</span><span>80%</span></div>
+        </div>
+      </aside>
+
+      <!-- Main Area -->
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <div class="topbar-school">BYU-Idaho</div>
+            <h1 class="topbar-title">Schedule</h1>
+          </div>
+          <div class="topbar-actions">
+            <button class="bell-button"><i class="fa-regular fa-bell"></i><span class="bell-dot"></span></button>
+            <a class="btn-primary" href="#"><i class="fa-solid fa-plus"></i><span class="btn-label">Create a Group</span></a>
+          </div>
+        </header>
+
+        <div class="content">
+            <div class="schedule">
+                <!-- SAMPLE: JavaScript will make the week from the Python data later -->
+                <div class="week-bar">
+                <h2 class="week-label">Nov 9 – 15, 2026</h2>
+                <div class="week-arrows">
+                    <button class="icon-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="icon-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                </div>
+
+                <div class="day-strip">
+                <div class="day">
+                    <div class="day-name">MON</div>
+                    <div class="day-num">9</div>
+                    <div class="day-dots"></div>
+                </div>
+                <div class="day">
+                    <div class="day-name">TUE</div>
+                    <div class="day-num">10</div>
+                    <div class="day-dots"></div>
+                </div>
+                <div class="day">
+                    <div class="day-name">WED</div>
+                    <div class="day-num">11</div>
+                    <div class="day-dots"></div>
+                </div>
+                <div class="day">
+                    <div class="day-name">THU</div>
+                    <div class="day-num">12</div>
+                    <div class="day-dots"></div>
+                </div>
+                <div class="day is-today">
+                    <div class="day-name">FRI</div>
+                    <div class="day-num">13</div>
+                    <div class="day-dots"><span class="dot theme-orange"></span></div>
+                </div>
+                <div class="day">
+                    <div class="day-name">SAT</div>
+                    <div class="day-num">14</div>
+                    <div class="day-dots"><span class="dot theme-green"></span></div>
+                </div>
+                <div class="day">
+                    <div class="day-name">SUN</div>
+                    <div class="day-num">15</div>
+                    <div class="day-dots"></div>
+                </div>
+            </div> 
+
+            <!-- SAMPLE: JavaScript will make these cards from the Python data later -->
+
+            <!-- Today -->
+            <section class="day-group">
+            <div class="group-head">
+                <h2 class="group-title">Today</h2>
+                <span class="group-date">Fri, Nov 13</span>
+            </div>
+
+            <article class="session-card theme-orange">
+                <div class="session-date">
+                <div class="session-day">FRI</div>
+                <div class="session-num">13</div>
+                </div>
+                <div class="session-body">
+                <div class="card-tags">
+                    <span class="card-subject">Introduction to Databases</span>
+                    <span class="card-code">ITM 111</span>
+                </div>
+                <h3 class="session-title">ITM 111 Study Group</h3>
+                <div class="session-info">
+                    <span><i class="fa-regular fa-clock"></i>5:00 – 6:30 PM</span>
+                    <span><i class="fa-solid fa-video"></i>Online</span>
+                </div>
+                </div>
+                <div class="session-actions">
+                <div class="avatars">
+                    <span class="avatar avatar-yellow">SO</span>
+                    <span class="avatar avatar-lilac">KT</span>
+                    <span class="avatar avatar-yellow">HG</span>
+                </div>
+                <a class="btn-small" href="#"><i class="fa-regular fa-message"></i> Chat</a>
+                </div>
+            </article>
+            </section>
+
+            <!-- Tomorrow -->
+            <section class="day-group">
+            <div class="group-head">
+                <h2 class="group-title">Tomorrow</h2>
+                <span class="group-date">Sat, Nov 14</span>
+            </div>
+
+            <article class="session-card theme-green">
+                <div class="session-date">
+                <div class="session-day">SAT</div>
+                <div class="session-num">14</div>
+                </div>
+                <div class="session-body">
+                <div class="card-tags">
+                    <span class="card-subject">Applied Programming</span>
+                    <span class="card-code">CSE 310</span>
+                </div>
+                <h3 class="session-title">CSE 310 Team Review</h3>
+                <div class="session-info">
+                    <span><i class="fa-regular fa-clock"></i>10:00 AM – 12:00 PM</span>
+                    <span><i class="fa-solid fa-location-dot"></i>Library 1F</span>
+                </div>
+                </div>
+                <div class="session-actions">
+                <div class="avatars">
+                    <span class="avatar avatar-yellow">YT</span>
+                    <span class="avatar avatar-lilac">EM</span>
+                    <span class="avatar avatar-yellow">HG</span>
+                </div>
+                <a class="btn-small" href="#"><i class="fa-regular fa-message"></i> Chat</a>
+                </div>
+            </article>
+            </section>
+
+            <!-- Next week -->
+            <section class="day-group">
+            <div class="group-head">
+                <h2 class="group-title">Next week</h2>
+                <span class="group-date">Nov 16 – 22</span>
+            </div>
+
+            <article class="session-card theme-purple">
+                <div class="session-date">
+                <div class="session-day">MON</div>
+                <div class="session-num">16</div>
+                </div>
+                <div class="session-body">
+                <div class="card-tags">
+                    <span class="card-subject">Web Backend Development</span>
+                    <span class="card-code">CSE 340</span>
+                </div>
+                <h3 class="session-title">CSE 340 Study Group</h3>
+                <div class="session-info">
+                    <span><i class="fa-regular fa-clock"></i>3:00 – 4:30 PM</span>
+                    <span><i class="fa-solid fa-location-dot"></i>Library 2F</span>
+                </div>
+                </div>
+                <div class="session-actions">
+                <div class="avatars">
+                    <span class="avatar avatar-yellow">MK</span>
+                    <span class="avatar avatar-lilac">RN</span>
+                    <span class="avatar avatar-yellow">AO</span>
+                    <span class="avatar avatar-lilac">HG</span>
+                </div>
+                <a class="btn-small" href="#"><i class="fa-regular fa-message"></i> Chat</a>
+                </div>
+            </article>
+
+            <article class="session-card theme-orange">
+                <div class="session-date">
+                <div class="session-day">TUE</div>
+                <div class="session-num">17</div>
+                </div>
+                <div class="session-body">
+                <div class="card-tags">
+                    <span class="card-subject">Introduction to Databases</span>
+                    <span class="card-code">ITM 111</span>
+                </div>
+                <h3 class="session-title">ITM 111 Study Group</h3>
+                <div class="session-info">
+                    <span><i class="fa-regular fa-clock"></i>5:00 – 6:30 PM</span>
+                    <span><i class="fa-solid fa-video"></i>Online</span>
+                </div>
+                </div>
+                <div class="session-actions">
+                <div class="avatars">
+                    <span class="avatar avatar-yellow">SO</span>
+                    <span class="avatar avatar-lilac">KT</span>
+                    <span class="avatar avatar-yellow">HG</span>
+                </div>
+                <a class="btn-small" href="#"><i class="fa-regular fa-message"></i> Chat</a>
+                </div>
+            </article>
+            </section>
+            </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
